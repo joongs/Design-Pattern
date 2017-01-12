@@ -4,16 +4,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import duck.strategy.pattern.MallardDuck;
+import duck.strategy.pattern.RedheadDuck;
 
-public class TestMallardDuck {
+public class TestRedheadDuck {
 
 	@Test
 	public void shouldIdentifyNameWhenNotGiveName() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck();
+		RedheadDuck rhDuck = new RedheadDuck();
 		//act
-		String name = mDuck.getName();
+		String name = rhDuck.getName();
 		//assert
 		assertEquals("no name", name);
 	}
@@ -21,19 +21,19 @@ public class TestMallardDuck {
 	@Test
 	public void shouldIdentifyNameWhenGiveName() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("mDuck");
+		RedheadDuck rhDuck = new RedheadDuck("rhDuck");
 		//act
-		String name = mDuck.getName();
+		String name = rhDuck.getName();
 		//assert
-		assertEquals("mDuck", name);
+		assertEquals("rhDuck", name);
 	}
 	
 	@Test
 	public void shouldCryWhenCallQuack() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("MD");
+		RedheadDuck rhDuck = new RedheadDuck("RD");
 		//act
-		String sound = mDuck.quack();
+		String sound = rhDuck.quack();
 		//assert
 		assertEquals("quack quack", sound);
 	}
@@ -41,9 +41,9 @@ public class TestMallardDuck {
 	@Test
 	public void shouldSwimWhenCallSwim() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("MD");
+		RedheadDuck rhDuck = new RedheadDuck("RD");
 		//act
-		String swim = mDuck.swim();
+		String swim = rhDuck.swim();
 		//assert
 		assertEquals("can swimming", swim);
 	}
@@ -51,10 +51,10 @@ public class TestMallardDuck {
 	@Test
 	public void shouldShowShapeWhenDisplay() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("MD");
+		RedheadDuck rhDuck = new RedheadDuck("RD");
 		//act
-		String display = mDuck.display();
+		String display = rhDuck.display();
 		//assert
-		assertEquals("MallardDuck", display);
+		assertEquals("RedheadDuck", display);
 	}
 }
