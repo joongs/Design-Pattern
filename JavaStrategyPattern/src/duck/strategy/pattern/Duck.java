@@ -1,6 +1,6 @@
 package duck.strategy.pattern;
 
-public class Duck {
+public abstract class Duck {
 
 	protected String name;
 	
@@ -19,4 +19,6 @@ public class Duck {
 	public String swim() {
 		return "can swimming";
 	}
+	
+	public abstract String display();
 }

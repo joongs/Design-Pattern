@@ -12,9 +12,9 @@ public class TestMallardDuck {
 	@Test
 	public void shouldIdentifyNameWhenNotGiveName() {
 		//arrange
-		Duck mDuck = new MallardDuck();
+		Duck duck = new MallardDuck();
 		//act
-		String name = mDuck.getName();
+		String name = duck.getName();
 		//assert
 		assertEquals("no name", name);
 	}
@@ -22,9 +22,9 @@ public class TestMallardDuck {
 	@Test
 	public void shouldIdentifyNameWhenGiveName() {
 		//arrange
-		Duck mDuck = new MallardDuck("mDuck");
+		Duck duck = new MallardDuck("mDuck");
 		//act
-		String name = mDuck.getName();
+		String name = duck.getName();
 		//assert
 		assertEquals("mDuck", name);
 	}
@@ -32,9 +32,9 @@ public class TestMallardDuck {
 	@Test
 	public void shouldCryWhenCallQuack() {
 		//arrange
-		Duck mDuck = new MallardDuck("MD");
+		Duck duck = new MallardDuck("MD");
 		//act
-		String sound = mDuck.quack();
+		String sound = duck.quack();
 		//assert
 		assertEquals("quack quack", sound);
 	}
@@ -42,9 +42,9 @@ public class TestMallardDuck {
 	@Test
 	public void shouldSwimWhenCallSwim() {
 		//arrange
-		Duck mDuck = new MallardDuck("MD");
+		Duck duck = new MallardDuck("MD");
 		//act
-		String swim = mDuck.swim();
+		String swim = duck.swim();
 		//assert
 		assertEquals("can swimming", swim);
 	}
@@ -52,9 +52,9 @@ public class TestMallardDuck {
 	@Test
 	public void shouldShowShapeWhenDisplay() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("MD");
+		Duck duck = new MallardDuck("MD");
 		//act
-		String display = mDuck.display();
+		String display = duck.display();
 		//assert
 		assertEquals("MallardDuck", display);
 	}
