@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import duck.strategy.pattern.Duck;
 import duck.strategy.pattern.MallardDuck;
 
 public class TestMallardDuck {
@@ -11,7 +12,7 @@ public class TestMallardDuck {
 	@Test
 	public void shouldIdentifyNameWhenNotGiveName() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck();
+		Duck mDuck = new MallardDuck();
 		//act
 		String name = mDuck.getName();
 		//assert
@@ -21,7 +22,7 @@ public class TestMallardDuck {
 	@Test
 	public void shouldIdentifyNameWhenGiveName() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("mDuck");
+		Duck mDuck = new MallardDuck("mDuck");
 		//act
 		String name = mDuck.getName();
 		//assert
@@ -31,7 +32,7 @@ public class TestMallardDuck {
 	@Test
 	public void shouldCryWhenCallQuack() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("MD");
+		Duck mDuck = new MallardDuck("MD");
 		//act
 		String sound = mDuck.quack();
 		//assert
@@ -41,7 +42,7 @@ public class TestMallardDuck {
 	@Test
 	public void shouldSwimWhenCallSwim() {
 		//arrange
-		MallardDuck mDuck = new MallardDuck("MD");
+		Duck mDuck = new MallardDuck("MD");
 		//act
 		String swim = mDuck.swim();
 		//assert

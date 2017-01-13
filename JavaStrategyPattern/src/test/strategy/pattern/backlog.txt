@@ -15,3 +15,8 @@ RedheadDuck을 만들 수 있다. - complete
 소리를 낼 수 있다. - quack() - complete
 수영할 수 있다. - swim() - complete
 형태가 있다. - display() - complete
+
+Duck을 만들 수 있다.
+공용 이름을 알수 있다. - getName()
+소리를 낼 수 있다. - quack()
+수영할 수 있다. - swim()
