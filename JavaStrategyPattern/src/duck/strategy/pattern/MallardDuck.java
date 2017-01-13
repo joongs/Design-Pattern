@@ -2,7 +2,7 @@ package duck.strategy.pattern;
 
 public class MallardDuck {
 
-	String name;
+	private String name;
 	
 	public MallardDuck(String name) {
 		this.name = name;

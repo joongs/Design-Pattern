@@ -2,7 +2,7 @@ package duck.strategy.pattern;
 
 public class RedheadDuck {
 
-	String name;
+	private String name;
 	
 	public RedheadDuck() {
 		this.name= "no name";
