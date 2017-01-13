@@ -21,3 +21,4 @@ Duck을 만들 수 있다.
 공용 소리를 낼 수 있다. - quack()
 공용 수영할 수 있다. - swim()
 공용 형태가 있다. - display() - complete
+
