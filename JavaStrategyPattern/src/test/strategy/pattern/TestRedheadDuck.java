@@ -58,4 +58,14 @@ public class TestRedheadDuck {
 		//assert
 		assertEquals("RedheadDuck", display);
 	}
+
+	@Test
+	public void sholudFlyWhenCallFly() {
+		//arrange
+		Duck duck = new RedheadDuck("RD");
+		//act
+		String fly = duck.fly();
+		//assert
+		assertEquals("can fly", fly);
+	}
 }

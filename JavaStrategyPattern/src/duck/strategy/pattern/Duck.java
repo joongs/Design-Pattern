@@ -22,4 +22,7 @@ public abstract class Duck {
 	
 	public abstract String display();
 
+	public String fly() {
+		return "can fly";
+	}
 }
