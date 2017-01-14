@@ -5,14 +5,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import duck.strategy.pattern.Duck;
-import duck.strategy.pattern.RedheadDuck;
+import duck.strategy.pattern.RubberDuck;
 
-public class TestRedheadDuck {
+public class TestRubberDuck {
 
 	@Test
 	public void shouldIdentifyNameWhenNotGiveName() {
 		//arrange
-		Duck duck = new RedheadDuck();
+		Duck duck = new RubberDuck();
 		//act
 		String name = duck.getName();
 		//assert
@@ -22,27 +22,27 @@ public class TestRedheadDuck {
 	@Test
 	public void shouldIdentifyNameWhenGiveName() {
 		//arrange
-		Duck duck = new RedheadDuck("rhDuck");
+		Duck duck = new RubberDuck("RBD");
 		//act
 		String name = duck.getName();
 		//assert
-		assertEquals("rhDuck", name);
+		assertEquals("RBD", name);
 	}
 	
 	@Test
 	public void shouldCryWhenCallQuack() {
 		//arrange
-		Duck duck = new RedheadDuck("RD");
+		Duck duck = new RubberDuck("RBD");
 		//act
 		String sound = duck.quack();
 		//assert
-		assertEquals("quack quack", sound);
+		assertEquals("bbic bbic", sound);
 	}
 	
 	@Test
 	public void shouldSwimWhenCallSwim() {
 		//arrange
-		Duck duck = new RedheadDuck("RD");
+		Duck duck = new RubberDuck("RBD");
 		//act
 		String swim = duck.swim();
 		//assert
@@ -52,20 +52,21 @@ public class TestRedheadDuck {
 	@Test
 	public void shouldShowShapeWhenCallDisplay() {
 		//arrange
-		Duck duck = new RedheadDuck("RD");
+		Duck duck = new RubberDuck("RBD");
 		//act
 		String display = duck.display();
 		//assert
-		assertEquals("RedheadDuck", display);
+		assertEquals("RubberDuck", display);
 	}
-
+	
 	@Test
-	public void sholudFlyWhenCallFly() {
+	public void shouldFlyWhenCallFly() {
 		//arrange
-		Duck duck = new RedheadDuck("RD");
+		Duck duck = new RubberDuck("RBD");
 		//act
 		String fly = duck.fly();
 		//assert
-		assertEquals("can fly", fly);
+		assertEquals("can't fly", fly);
 	}
+
 }

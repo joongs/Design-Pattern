@@ -10,6 +10,7 @@ public class MallardDuck extends Duck {
 		super();
 	}
 
+	@Override
 	public String display() {
 		return "MallardDuck";
 	}
