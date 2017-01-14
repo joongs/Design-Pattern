@@ -6,13 +6,32 @@
 //Backlog list
 
 MallardDuck을 만들 수 있다.
-이름을 알 수 있다.
-소리를 낼 수 있다.
-수영을 할 수 있다.
+MallardDuck은 이름을 알 수 있다.
+MallardDuck은 소리를 낼 수 있다.
+MallardDuck은 수영을 할 수 있다.
+MallardDuck은 형태가 있다.
+MallardDuck은 날 수 있다.
+
 RedheadDuck을 만들 수 있다.
-다른 형태가 있다.
-날 수 있다.
+RedheadDuck은 이름을 알 수 있다.
+RedheadDuck은 소리를 낼 수 있다.
+RedheadDuck은 수영을 할 수 있다.
+RedheadDuck은 형태가 있다.
+RedheadDuck은 날 수 있다.
+
 RubberDuck을 만들 수 있다.
+RubberDuck은 이름을 알 수 있다.
+RubberDuck은 소리를 낼 수 있다.
+RubberDuck은 수영을 할 수 있다.
+RubberDuck은 형태가 있다.
+RubberDuck은 날 수 없다.
+
+DecoyDuck을 만들 수 있다.
+DecoyDuck은 이름을 알 수 있다.
+DecoyDuck은 소리를 낼 수 없다.
+DecoyDuck은 수영 할 수 있다.
+DecoyDuck은 형태가 있다.
+DecoyDuck은 날 수 없다.
 ------------------------------------
 
 MallardDuck을 만들 수 있다. - complete

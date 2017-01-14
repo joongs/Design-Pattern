@@ -4,22 +4,60 @@
 3. 올바르게 만든다.(중복제거)
 ------------------------------------
 //Backlog list
+
+MallardDuck을 만들 수 있다.
+MallardDuck은 이름을 알 수 있다.
+MallardDuck은 소리를 낼 수 있다.
+MallardDuck은 수영을 할 수 있다.
+MallardDuck은 형태가 있다.
+MallardDuck은 날 수 있다.
+
+RedheadDuck을 만들 수 있다.
+RedheadDuck은 이름을 알 수 있다.
+RedheadDuck은 소리를 낼 수 있다.
+RedheadDuck은 수영을 할 수 있다.
+RedheadDuck은 형태가 있다.
+RedheadDuck은 날 수 있다.
+
+RubberDuck을 만들 수 있다.
+RubberDuck은 이름을 알 수 있다.
+RubberDuck은 소리를 낼 수 있다.
+RubberDuck은 수영을 할 수 있다.
+RubberDuck은 형태가 있다.
+RubberDuck은 날 수 없다.
+
+DecoyDuck을 만들 수 있다.
+DecoyDuck은 이름을 알 수 있다.
+DecoyDuck은 소리를 낼 수 없다.
+DecoyDuck은 수영 할 수 있다.
+DecoyDuck은 형태가 있다.
+DecoyDuck은 날 수 없다.
+------------------------------------
+
 MallardDuck을 만들 수 있다. - complete
 이름을 알 수 있다. - getName() - complete
 소리를 낼 수 있다. - quack() - complete
 수영할 수 있다. - swim() - complete
 형태가 있다. - display() - complete
+날수 있다. - fly() - complete
 
 RedheadDuck을 만들 수 있다. - complete
 이름을 알수 있다. - getName() - complete
 소리를 낼 수 있다. - quack() - complete
 수영할 수 있다. - swim() - complete
 형태가 있다. - display() - complete
+날수 있다. - fly() - complete
 
-Duck을 만들 수 있다.
+Duck을 만들 수 있다. - complete
 공용 이름을 알수 있다. - getName()
 공용 소리를 낼 수 있다. - quack()
 공용 수영할 수 있다. - swim()
 공용 형태가 있다. - display() - complete
-------------------------------------
-하늘을 날 수 있다. - TODO
+날수 있다. - fly() - complete
+
+RubberDuck을 만들 수 있다. - complete
+이름을 알수 있다. - complete
+소리를 낼 수 있다. - complete
+수영을 할 수 있다. - complete
+형태가 있다. - complete
+날수 없다. - complete

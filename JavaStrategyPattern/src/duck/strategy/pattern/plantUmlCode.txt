@@ -1,0 +1,47 @@
+@startuml
+abstract class Duck {
+	#String name
+	+Duck()
+	+String getName()
+	+String quack()
+	+String swim()
+	+{abstract}String display()
+	+String fly()
+}
+class MallardDuck {
+	+MallardDuck()
+	+MallardDuck(String name)
+	+String display()
+}
+class Duck {
+}
+Duck <|-- MallardDuck
+class RedheadDuck {
+	+RedheadDuck()
+	+RedheadDuck(String name)
+	+String display()
+}
+class Duck {
+}
+Duck <|-- RedheadDuck
+class RubberDuck {
+	+RubberDuck()
+	+RubberDuck(String name)
+	+String quack()
+	+String display()
+	+String fly()
+}
+class Duck {
+}
+Duck <|-- RubberDuck
+class DecoyDuck {
+	+DecoyDuck()
+	+DecoyDuck(String name)
+	+String quack()
+	+String display()
+	+String fly()
+}
+class Duck {
+}
+Duck <|-- DecoyDuck
+@enduml

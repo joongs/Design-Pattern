@@ -1,27 +1,27 @@
 package duck.strategy.pattern;
 
-public class RubberDuck extends Duck{
+public class DecoyDuck extends Duck{
 
-	public RubberDuck() {
+	public DecoyDuck() {
 		super();
 	}
 	
-	public RubberDuck(String name) {
+	public DecoyDuck(String name) {
 		this.name = name;
 	}
-
+	
 	@Override
 	public String quack() {
-		return "bbic bbic";
+		return "can't quack quack";
 	}
 	
+	@Override
 	public String display() {
-		return "RubberDuck";
+		return "DecoyDuck";
 	}
 	
 	@Override
 	public String fly() {
 		return "can't fly";
 	}
-
 }

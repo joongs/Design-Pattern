@@ -10,7 +10,6 @@ public class RedheadDuck extends Duck{
 		this.name = name;
 	}
 
-	@Override
 	public String display() {
 		return "RedheadDuck";
 	}
