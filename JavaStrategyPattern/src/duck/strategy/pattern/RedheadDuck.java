@@ -17,6 +17,7 @@ public class RedheadDuck extends Duck{
 		this.flyBehavior = new FlyWithWings();
 	}
 
+	@Override
 	public String display() {
 		return "RedheadDuck";
 	}

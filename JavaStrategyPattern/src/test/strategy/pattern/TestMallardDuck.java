@@ -7,6 +7,7 @@ import org.junit.Test;
 import duck.strategy.pattern.Duck;
 import duck.strategy.pattern.MallardDuck;
 import flyBehavior.strategy.pattern.FlyNoWay;
+import quackBehavior.strategy.pattern.Squeak;
 
 public class TestMallardDuck {
 
@@ -82,5 +83,19 @@ public class TestMallardDuck {
 		assertEquals("can fly", flyBefore);
 		assertEquals("can't fly", flyAfter);
 		assertNotEquals(flyBefore, flyAfter);
+	}
+	
+	@Test
+	public void sholudQuackWhenCallSetQuackBehavior() {
+		//arrange
+		Duck duck = new MallardDuck("MD");
+		//act
+		String quackBefore = duck.performQuack();
+		duck.SetQuackBehavior(new Squeak());
+		String quackAfter = duck.performQuack();
+		//assert
+		assertEquals("quack quack", quackBefore);
+		assertEquals("bbic bbic", quackAfter);
+		assertNotEquals(quackBefore, quackAfter);
 	}
 }

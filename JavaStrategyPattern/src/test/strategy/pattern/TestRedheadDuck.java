@@ -7,6 +7,7 @@ import org.junit.Test;
 import duck.strategy.pattern.Duck;
 import duck.strategy.pattern.RedheadDuck;
 import flyBehavior.strategy.pattern.FlyNoWay;
+import quackBehavior.strategy.pattern.Squeak;
 
 public class TestRedheadDuck {
 
@@ -82,5 +83,19 @@ public class TestRedheadDuck {
 		assertEquals("can fly", flyBefore);
 		assertEquals("can't fly", flyAfter);
 		assertNotEquals(flyBefore, flyAfter);
+	}
+	
+	@Test
+	public void shouldQuackWhenCallSetQuackBehavior() {
+		//arrange
+		Duck duck = new RedheadDuck("RD");
+		//act
+		String quackBefore = duck.performQuack();
+		duck.SetQuackBehavior(new Squeak());
+		String quackAfter = duck.performQuack();	
+		//assert
+		assertEquals("quack quack", quackBefore);
+		assertEquals("bbic bbic", quackAfter);
+		assertNotEquals(quackBefore, quackAfter);
 	}
 }

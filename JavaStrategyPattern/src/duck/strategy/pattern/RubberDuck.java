@@ -17,6 +17,7 @@ public class RubberDuck extends Duck{
 		this.flyBehavior = new FlyNoWay();
 	}
 
+	@Override
 	public String display() {
 		return "RubberDuck";
 	}
