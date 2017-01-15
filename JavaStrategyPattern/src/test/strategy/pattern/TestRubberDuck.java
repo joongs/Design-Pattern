@@ -34,7 +34,8 @@ public class TestRubberDuck {
 		//arrange
 		Duck duck = new RubberDuck("RBD");
 		//act
-		String sound = duck.quack();
+		//String sound = duck.quack();
+		String sound = duck.performQuack();
 		//assert
 		assertEquals("bbic bbic", sound);
 	}

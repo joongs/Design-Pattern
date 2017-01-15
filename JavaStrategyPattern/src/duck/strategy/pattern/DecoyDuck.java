@@ -4,15 +4,12 @@ public class DecoyDuck extends Duck{
 
 	public DecoyDuck() {
 		super();
+		this.quackBehavior = new MuteQuack();
 	}
 	
 	public DecoyDuck(String name) {
 		this.name = name;
-	}
-	
-	@Override
-	public String quack() {
-		return "can't quack quack";
+		this.quackBehavior = new MuteQuack();
 	}
 	
 	@Override

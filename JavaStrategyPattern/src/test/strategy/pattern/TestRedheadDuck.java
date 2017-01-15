@@ -34,7 +34,7 @@ public class TestRedheadDuck {
 		//arrange
 		Duck duck = new RedheadDuck("RD");
 		//act
-		String sound = duck.quack();
+		String sound = duck.performQuack();
 		//assert
 		assertEquals("quack quack", sound);
 	}

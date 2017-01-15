@@ -34,7 +34,7 @@ public class TestDecoyDuck {
 		//arrange
 		Duck duck = new DecoyDuck("DD");
 		//act
-		String sound = duck.quack();
+		String sound = duck.performQuack();
 		//assert
 		assertEquals("can't quack quack", sound);		
 	}

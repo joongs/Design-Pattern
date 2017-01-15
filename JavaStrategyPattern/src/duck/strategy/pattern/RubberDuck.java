@@ -4,17 +4,14 @@ public class RubberDuck extends Duck{
 
 	public RubberDuck() {
 		super();
+		this.quackBehavior = new Squeak();
 	}
 	
 	public RubberDuck(String name) {
 		this.name = name;
+		this.quackBehavior = new Squeak();
 	}
 
-	@Override
-	public String quack() {
-		return "bbic bbic";
-	}
-	
 	public String display() {
 		return "RubberDuck";
 	}
@@ -23,5 +20,4 @@ public class RubberDuck extends Duck{
 	public String fly() {
 		return "can't fly";
 	}
-
 }
