@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import duck.strategy.pattern.Duck;
 import duck.strategy.pattern.RubberDuck;
+import flyBehavior.strategy.pattern.FlyWithWings;
 
 public class TestRubberDuck {
 
@@ -68,5 +69,19 @@ public class TestRubberDuck {
 		String fly = duck.performFly();
 		//assert
 		assertEquals("can't fly", fly);
+	}
+	
+	@Test
+	public void sholudFlyWhenSetFlyBehavior() {
+		//arrange
+		Duck duck = new RubberDuck("RBD");
+		//act
+		String flyBefore = duck.performFly();
+		duck.SetFlyBehavior(new FlyWithWings());
+		String flyAfter = duck.performFly();
+		//assert
+		assertEquals("can't fly", flyBefore);
+		assertEquals("can fly", flyAfter);
+		assertNotEquals(flyBefore, flyAfter);
 	}
 }

@@ -30,4 +30,8 @@ public abstract class Duck {
 	public String performFly() {
 		return flyBehavior.fly();
 	}
+
+	public void SetFlyBehavior(flyBehavior flyBehavior) {
+		this.flyBehavior = flyBehavior;
+	}
 }

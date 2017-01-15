@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import duck.strategy.pattern.Duck;
 import duck.strategy.pattern.MallardDuck;
+import flyBehavior.strategy.pattern.FlyNoWay;
 
 public class TestMallardDuck {
 
@@ -60,12 +61,26 @@ public class TestMallardDuck {
 	}
 	
 	@Test
-	public void shouldflyWhenCallFly() {
+	public void shouldFlyWhenCallFly() {
 		//arrange
 		Duck duck = new MallardDuck("MD");
 		//act
 		String fly = duck.performFly();
 		//assert
 		assertEquals("can fly", fly);
+	}
+	
+	@Test
+	public void shouldFlyWhenCallSetFlyBehavior() {
+		//arrange
+		Duck duck = new MallardDuck("MD");
+		//act
+		String flyBefore = duck.performFly();
+		duck.SetFlyBehavior(new FlyNoWay());
+		String flyAfter= duck.performFly();
+		//assert
+		assertEquals("can fly", flyBefore);
+		assertEquals("can't fly", flyAfter);
+		assertNotEquals(flyBefore, flyAfter);
 	}
 }
