@@ -64,7 +64,7 @@ public class TestRedheadDuck {
 		//arrange
 		Duck duck = new RedheadDuck("RD");
 		//act
-		String fly = duck.fly();
+		String fly = duck.performFly();
 		//assert
 		assertEquals("can fly", fly);
 	}

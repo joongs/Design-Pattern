@@ -64,7 +64,7 @@ public class TestDecoyDuck {
 		//arrange
 		Duck duck = new DecoyDuck("DD");
 		//act
-		String fly = duck.fly();
+		String fly = duck.performFly();
 		//assert
 		assertEquals("can't fly", fly);
 	}

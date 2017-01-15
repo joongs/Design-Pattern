@@ -4,6 +4,7 @@ public abstract class Duck {
 
 	protected String name;
 	protected QuackBehavior quackBehavior;
+	protected flyBehavior flyBehavior;
 	
 	public Duck() {
 		this.name = "no name";
@@ -19,11 +20,11 @@ public abstract class Duck {
 	
 	public abstract String display();
 
-	public String fly() {
-		return "can fly";
-	}
-
 	public String performQuack() {
 		return quackBehavior.quack();
+	}
+
+	public String performFly() {
+		return flyBehavior.fly();
 	}
 }

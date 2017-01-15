@@ -65,7 +65,7 @@ public class TestRubberDuck {
 		//arrange
 		Duck duck = new RubberDuck("RBD");
 		//act
-		String fly = duck.fly();
+		String fly = duck.performFly();
 		//assert
 		assertEquals("can't fly", fly);
 	}
