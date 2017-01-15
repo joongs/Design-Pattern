@@ -1,6 +1,6 @@
 package flyBehavior.strategy.pattern;
 
-public class FlyNoWay implements flyBehavior {
+public class FlyNoWay implements FlyBehavior {
 
 	@Override
 	public String fly() {

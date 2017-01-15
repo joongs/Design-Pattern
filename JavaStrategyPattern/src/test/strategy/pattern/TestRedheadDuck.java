@@ -77,7 +77,7 @@ public class TestRedheadDuck {
 		Duck duck = new RedheadDuck("RD");
 		//act
 		String flyBefore = duck.performFly();
-		duck.SetFlyBehavior(new FlyNoWay());
+		duck.setFlyBehavior(new FlyNoWay());
 		String flyAfter = duck.performFly();
 		//assert
 		assertEquals("can fly", flyBefore);
@@ -91,7 +91,7 @@ public class TestRedheadDuck {
 		Duck duck = new RedheadDuck("RD");
 		//act
 		String quackBefore = duck.performQuack();
-		duck.SetQuackBehavior(new Squeak());
+		duck.setQuackBehavior(new Squeak());
 		String quackAfter = duck.performQuack();	
 		//assert
 		assertEquals("quack quack", quackBefore);

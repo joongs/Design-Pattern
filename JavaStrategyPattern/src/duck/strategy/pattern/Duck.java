@@ -1,13 +1,13 @@
 package duck.strategy.pattern;
 
-import flyBehavior.strategy.pattern.flyBehavior;
+import flyBehavior.strategy.pattern.FlyBehavior;
 import quackBehavior.strategy.pattern.QuackBehavior;
 
 public abstract class Duck {
 
 	protected String name;
 	protected QuackBehavior quackBehavior;
-	protected flyBehavior flyBehavior;
+	protected FlyBehavior flyBehavior;
 	
 	public Duck() {
 		this.name = "no name";
@@ -31,11 +31,11 @@ public abstract class Duck {
 		return flyBehavior.fly();
 	}
 
-	public void SetFlyBehavior(flyBehavior flyBehavior) {
+	public void setFlyBehavior(FlyBehavior flyBehavior) {
 		this.flyBehavior = flyBehavior;
 	}
 
-	public void SetQuackBehavior(QuackBehavior quackBehavior) {
+	public void setQuackBehavior(QuackBehavior quackBehavior) {
 		this.quackBehavior = quackBehavior;
 	}
 }

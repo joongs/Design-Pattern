@@ -5,16 +5,16 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import duck.strategy.pattern.Duck;
-import duck.strategy.pattern.RubberDuck;
-import flyBehavior.strategy.pattern.FlyWithWings;
+import duck.strategy.pattern.ModelDuck;
+import flyBehavior.strategy.pattern.FlyRocketPowered;
 import quackBehavior.strategy.pattern.Quack;
 
-public class TestRubberDuck {
+public class TestModelDuck {
 
 	@Test
-	public void shouldIdentifyNameWhenNotGiveName() {
+	public void sholudCreateModelDuckWhenNotGivaName() {
 		//arrange
-		Duck duck = new RubberDuck();
+		Duck duck = new ModelDuck();
 		//act
 		String name = duck.getName();
 		//assert
@@ -22,30 +22,29 @@ public class TestRubberDuck {
 	}
 	
 	@Test
-	public void shouldIdentifyNameWhenGiveName() {
+	public void shouldCreateModelDuckWhenGiveName() {
 		//arrange
-		Duck duck = new RubberDuck("RBD");
+		Duck duck = new ModelDuck("MD");
 		//act
 		String name = duck.getName();
 		//assert
-		assertEquals("RBD", name);
+		assertEquals("MD", name);
 	}
 	
 	@Test
 	public void shouldCryWhenCallQuack() {
 		//arrange
-		Duck duck = new RubberDuck("RBD");
+		Duck duck = new ModelDuck("MD");
 		//act
-		//String sound = duck.quack();
-		String sound = duck.performQuack();
+		String quack = duck.performQuack();
 		//assert
-		assertEquals("bbic bbic", sound);
+		assertEquals("can't quack quack", quack);
 	}
 	
 	@Test
 	public void shouldSwimWhenCallSwim() {
 		//arrange
-		Duck duck = new RubberDuck("RBD");
+		Duck duck = new ModelDuck("MD");
 		//act
 		String swim = duck.swim();
 		//assert
@@ -55,48 +54,39 @@ public class TestRubberDuck {
 	@Test
 	public void shouldShowShapeWhenCallDisplay() {
 		//arrange
-		Duck duck = new RubberDuck("RBD");
+		Duck duck = new ModelDuck("MD");
 		//act
 		String display = duck.display();
 		//assert
-		assertEquals("RubberDuck", display);
+		assertEquals("ModelDuck", display);
 	}
 	
 	@Test
-	public void shouldFlyWhenCallFly() {
+	public void shouldFlyWhenSetFlyBehavior() {
 		//arrange
-		Duck duck = new RubberDuck("RBD");
-		//act
-		String fly = duck.performFly();
-		//assert
-		assertEquals("can't fly", fly);
-	}
-	
-	@Test
-	public void sholudFlyWhenSetFlyBehavior() {
-		//arrange
-		Duck duck = new RubberDuck("RBD");
+		Duck duck = new ModelDuck("MD");
 		//act
 		String flyBefore = duck.performFly();
-		duck.setFlyBehavior(new FlyWithWings());
+		duck.setFlyBehavior(new FlyRocketPowered());
 		String flyAfter = duck.performFly();
 		//assert
 		assertEquals("can't fly", flyBefore);
-		assertEquals("can fly", flyAfter);
+		assertEquals("can fly fast", flyAfter);
 		assertNotEquals(flyBefore, flyAfter);
 	}
 	
 	@Test
-	public void sholudlQuackWhenSetQuackBehavior() {
+	public void shouldQuackWhenSetQuackBehavior() {
 		//arrange
-		Duck duck = new RubberDuck("RD");
+		Duck duck = new ModelDuck("MD");
 		//act
 		String quackBefore = duck.performQuack();
 		duck.setQuackBehavior(new Quack());
 		String quackAfter = duck.performQuack();
 		//assert
-		assertEquals("bbic bbic", quackBefore);
+		assertEquals("can't quack quack", quackBefore);
 		assertEquals("quack quack", quackAfter);
 		assertNotEquals(quackBefore, quackAfter);
 	}
+
 }

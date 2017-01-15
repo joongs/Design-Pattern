@@ -77,7 +77,7 @@ public class TestDecoyDuck {
 		Duck duck = new DecoyDuck("DD");
 		//act
 		String flyBefore = duck.performFly();
-		duck.SetFlyBehavior(new FlyWithWings());
+		duck.setFlyBehavior(new FlyWithWings());
 		String flyAfter = duck.performFly();
 		//assert
 		assertEquals("can't fly", flyBefore);
@@ -91,7 +91,7 @@ public class TestDecoyDuck {
 		Duck duck = new DecoyDuck("DD");
 		//act
 		String quackBefore = duck.performQuack();
-		duck.SetQuackBehavior(new Quack());
+		duck.setQuackBehavior(new Quack());
 		String quackAfter = duck.performQuack();
 		//assert
 		assertEquals("can't quack quack", quackBefore);
