@@ -41,6 +41,17 @@ DecoyDuck은 수영 할 수 있다.
 DecoyDuck은 형태가 있다.
 DecoyDuck은 날 수 없다.
 
+QuackBehavior 인터페이스를 정의
+Quack 클래스 구현
+Squeak 클래스 구현
+MuteQuack 클래스 구현
+
+FlyBehavior 인터페이스 정의
+FlyWithWings 클래스 구현
+FlyNoWay 클래스 구현
+
+동적으로 행동을 지정하는 방법을 추가
+
 각 행동은 인터페이스로 표현하고 행동을 구현할 떄 인터페이스를 구현하도록 하자.
 - Duck에서 나는 행동과 꽥꽥 소리를 내는 행동을 Duck 클래스에서 정의한 메소드를 
 써서 구현하지 않고 다른 클래스에 위임한다는 것입니다.

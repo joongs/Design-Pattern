@@ -1,5 +1,8 @@
 package duck.strategy.pattern;
 
+import flyBehavior.strategy.pattern.FlyWithWings;
+import quackBehavior.strategy.pattern.Quack;
+
 public class RedheadDuck extends Duck{
 
 	public RedheadDuck() {

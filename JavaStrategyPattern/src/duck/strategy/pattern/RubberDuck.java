@@ -1,5 +1,8 @@
 package duck.strategy.pattern;
 
+import flyBehavior.strategy.pattern.FlyNoWay;
+import quackBehavior.strategy.pattern.Squeak;
+
 public class RubberDuck extends Duck{
 
 	public RubberDuck() {

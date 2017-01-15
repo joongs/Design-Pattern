@@ -1,5 +1,8 @@
 package duck.strategy.pattern;
 
+import flyBehavior.strategy.pattern.flyBehavior;
+import quackBehavior.strategy.pattern.QuackBehavior;
+
 public abstract class Duck {
 
 	protected String name;
