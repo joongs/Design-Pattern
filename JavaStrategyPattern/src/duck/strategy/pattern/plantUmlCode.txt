@@ -2,13 +2,15 @@
 abstract class Duck {
 	#String name
 	#QuackBehavior quackBehavior
-	#flyBehavior flyBehavior
+	#FlyBehavior flyBehavior
 	+Duck()
 	+String getName()
 	+String swim()
 	+{abstract}String display()
 	+String performQuack()
 	+String performFly()
+	+void setFlyBehavior(FlyBehavior flyBehavior)
+	+void setQuackBehavior(QuackBehavior quackBehavior)
 }
 class MallardDuck {
 	+MallardDuck()
@@ -42,21 +44,35 @@ class DecoyDuck {
 class Duck {
 }
 Duck <|-- DecoyDuck
-interface flyBehavior {
+class ModelDuck {
+	+ModelDuck()
+	+ModelDuck(String name)
+	+String display()
+}
+class Duck {
+}
+Duck <|-- ModelDuck
+interface FlyBehavior {
 	String fly()
 }
-class FlyNoWay {
-	+String fly()
-}
-class flyBehavior {
-}
-flyBehavior <|.. FlyNoWay
 class FlyWithWings {
 	+String fly()
 }
-class flyBehavior {
+class FlyBehavior {
 }
-flyBehavior <|.. FlyWithWings
+FlyBehavior <|.. FlyWithWings
+class FlyRocketPowered {
+	+String fly()
+}
+class FlyBehavior {
+}
+FlyBehavior <|.. FlyRocketPowered
+class FlyNoWay {
+	+String fly()
+}
+class FlyBehavior {
+}
+FlyBehavior <|.. FlyNoWay
 interface QuackBehavior {
 	String quack()
 }
