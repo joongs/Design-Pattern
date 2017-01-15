@@ -1,12 +1,14 @@
 @startuml
 abstract class Duck {
 	#String name
+	#QuackBehavior quackBehavior
+	#flyBehavior flyBehavior
 	+Duck()
 	+String getName()
-	+String quack()
 	+String swim()
 	+{abstract}String display()
-	+String fly()
+	+String performQuack()
+	+String performFly()
 }
 class MallardDuck {
 	+MallardDuck()
@@ -27,9 +29,7 @@ Duck <|-- RedheadDuck
 class RubberDuck {
 	+RubberDuck()
 	+RubberDuck(String name)
-	+String quack()
 	+String display()
-	+String fly()
 }
 class Duck {
 }
@@ -37,11 +37,45 @@ Duck <|-- RubberDuck
 class DecoyDuck {
 	+DecoyDuck()
 	+DecoyDuck(String name)
-	+String quack()
 	+String display()
-	+String fly()
 }
 class Duck {
 }
 Duck <|-- DecoyDuck
+interface flyBehavior {
+	String fly()
+}
+class FlyNoWay {
+	+String fly()
+}
+class flyBehavior {
+}
+flyBehavior <|.. FlyNoWay
+class FlyWithWings {
+	+String fly()
+}
+class flyBehavior {
+}
+flyBehavior <|.. FlyWithWings
+interface QuackBehavior {
+	String quack()
+}
+class Quack {
+	+String quack()
+}
+class QuackBehavior {
+}
+QuackBehavior <|.. Quack
+class MuteQuack {
+	+String quack()
+}
+class QuackBehavior {
+}
+QuackBehavior <|.. MuteQuack
+class Squeak {
+	+String quack()
+}
+class QuackBehavior {
+}
+QuackBehavior <|.. Squeak
 @enduml
