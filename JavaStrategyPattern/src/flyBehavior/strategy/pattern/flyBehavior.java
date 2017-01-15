@@ -1,6 +1,6 @@
 package flyBehavior.strategy.pattern;
 
-public interface flyBehavior {
+public interface FlyBehavior {
 
 	public String fly();
 }
