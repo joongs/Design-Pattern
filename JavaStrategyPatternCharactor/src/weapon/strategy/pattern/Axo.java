@@ -6,5 +6,4 @@ public class Axo implements WeaponBehavior {
 	public String use() {
 		return "axo";
 	}
-
 }

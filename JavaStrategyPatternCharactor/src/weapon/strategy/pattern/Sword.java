@@ -6,5 +6,4 @@ public class Sword implements WeaponBehavior {
 	public String use() {
 		return "sword";
 	}
-
 }

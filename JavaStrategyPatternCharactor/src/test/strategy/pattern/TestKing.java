@@ -41,16 +41,44 @@ public class TestKing {
 	}
 	
 	@Test
-	public void shouldChangeWeaponWhenCallSetWeaponBehavior() {
+	public void shouldUseAxoWhenCallSetWeaponBehavior() {
 		//arrange
 		Character king = new King("KING");
 		//act
 		String weaponBefore = king.fight();
-		king.setWeaponBehavior(new Axo());
+		king.setWeapon(new Axo());
 		String weaponAfter = king.fight();
 		//assert
 		assertEquals("sword", weaponBefore);
 		assertEquals("axo", weaponAfter);
+		assertNotEquals(weaponBefore, weaponAfter);
+	}
+	
+	@Test
+	public void shouldUseKnifeWhenCallSetWeaponBehavior() {
+		//arrange
+		Character king = new King("KING");
+		//act
+		String weaponBefore = king.fight();
+		king.setWeapon(new Knife());
+		String weaponAfter = king.fight();
+		//assert
+		assertEquals("sword", weaponBefore);
+		assertEquals("knife", weaponAfter);
+		assertNotEquals(weaponBefore, weaponAfter);
+	}
+	
+	@Test
+	public void shouldUSeBowAndArrowWhenCallSetWeaponBehavior() {
+		//arrange
+		Character king = new King("KING");
+		//act
+		String weaponBefore = king.fight();
+		king.setWeapon(new BowAndArrow());
+		String weaponAfter = king.fight();
+		//assert
+		assertEquals("sword", weaponBefore);
+		assertEquals("bow and arrow", weaponAfter);
 		assertNotEquals(weaponBefore, weaponAfter);
 	}
 }
