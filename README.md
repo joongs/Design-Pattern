@@ -16,3 +16,4 @@ This Repository subject is Design Pattern. I make it by using Test Driven Develo
 1. Add King class and TestCase - 2017/01/16
 2. Add Knight class and TestCase - 2017/01/16
 3. Add WeaponBehavior interface and Sword class, Axo class - 2017/01/16
+4. Add Weapon, Knife class and BowAndArrow class - 2017/01/17
