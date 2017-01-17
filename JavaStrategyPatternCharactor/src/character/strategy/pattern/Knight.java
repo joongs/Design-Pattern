@@ -6,11 +6,11 @@ public class Knight extends Character{
 
 	public Knight() {
 		this.name = "no name";
-		this.weaponBehavior = new Axo();
+		this.weapon = new Axo();
 	}
 
 	public Knight(String name) {
 		this.name = name;
-		this.weaponBehavior = new Axo();
+		this.weapon = new Axo();
 	}
 }

@@ -6,11 +6,11 @@ public class King extends Character {
 
 	public King() {
 		this.name = "no name";
-		this.weaponBehavior = new Sword();
+		this.weapon = new Sword();
 	}
 	
 	public King(String name) {
 		this.name = name;
-		this.weaponBehavior = new Sword();
+		this.weapon = new Sword();
 	}
 }

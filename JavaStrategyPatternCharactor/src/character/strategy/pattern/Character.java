@@ -4,7 +4,7 @@ import weapon.strategy.pattern.WeaponBehavior;
 
 public class Character {
 	
-	WeaponBehavior weaponBehavior;
+	WeaponBehavior weapon;
 
 	protected String name;
 
@@ -17,10 +17,10 @@ public class Character {
 	}
 
 	public String fight() {
-		return weaponBehavior.use();
+		return weapon.use();
 	}
 
-	public void setWeaponBehavior(WeaponBehavior weaponBehavior) {
-		this.weaponBehavior = weaponBehavior;
+	public void setWeaponBehavior(WeaponBehavior weapon) {
+		this.weapon = weapon;
 	}
 }

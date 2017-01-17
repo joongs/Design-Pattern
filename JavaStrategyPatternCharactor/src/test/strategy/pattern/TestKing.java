@@ -21,7 +21,7 @@ public class TestKing {
 	}
 	
 	@Test
-	public void shouldCreatKingWhenCallGiveName() {
+	public void shouldCreateKingWhenCallGiveName() {
 		//arrange
 		Character king = new King("KING");
 		//act
@@ -40,6 +40,7 @@ public class TestKing {
 		assertEquals("sword", weapon);
 	}
 	
+	@Test
 	public void shouldChangeWeaponWhenCallSetWeaponBehavior() {
 		//arrange
 		Character king = new King("KING");
