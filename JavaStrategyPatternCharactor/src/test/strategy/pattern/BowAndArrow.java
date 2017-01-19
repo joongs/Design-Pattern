@@ -8,5 +8,4 @@ public class BowAndArrow implements WeaponBehavior {
 	public String use() {
 		return "bow and arrow";
 	}
-
 }
