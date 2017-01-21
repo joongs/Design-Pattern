@@ -20,4 +20,4 @@ This Repository subject is Design Pattern. I make it by using Test Driven Develo
 
 ## Observer Pattern : WeatherData
 1. Add WeatherData class and TestCase - 2017/01/19
-2. 
+2. Add CurrentConditionDisplay class and TestCase - 2017/01/21
