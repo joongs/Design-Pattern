@@ -5,7 +5,16 @@ public class WeatherData {
 	private float temperature;
 	private float humidity;
 	private float pressure;
+	private CurrentConditionDisplay currentConditionDisplay;
 	
+	public WeatherData(CurrentConditionDisplay currentConditionDisplay) {
+		this.currentConditionDisplay = currentConditionDisplay;
+	}
+	
+	public WeatherData() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void setTemperature(float temperature) {
 		this.temperature = temperature;
 	}
@@ -28,6 +37,14 @@ public class WeatherData {
 
 	public float getPressure() {
 		return pressure;
+	}
+
+	public void measurementsChanged() {
+		float temp = this.getTemperature();
+		float humidity = this.getHumidity();
+		float pressure = this.getPressure();
+		
+		currentConditionDisplay.update(temp, humidity, pressure);
 	}
 
 }
