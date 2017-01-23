@@ -13,7 +13,7 @@ public class TestStatisticsDisplay {
 	public void shouldGetLatestWeatherDataWhenCallMeasurementsChanged() {
 		//arrange
 		StatisticsDisplay display = new StatisticsDisplay();
-		WeatherData data = new WeatherData(null, display);
+		WeatherData data = new WeatherData(null, display, null);
 		
 		//act
 		data.setTemperature(10.0F);
@@ -31,7 +31,7 @@ public class TestStatisticsDisplay {
 	public void shouldSeeLatestDataWhenCallMeasurementsChanged() {
 		//arrange
 		StatisticsDisplay statistics = new StatisticsDisplay();
-		WeatherData data = new WeatherData(null, statistics);
+		WeatherData data = new WeatherData(null, statistics, null);
 		data.setTemperature(10.0F);
 		data.setHumidity(10.0F);
 		data.setPressure(10.0F);

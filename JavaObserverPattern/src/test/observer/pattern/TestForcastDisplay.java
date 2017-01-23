@@ -4,47 +4,48 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import weatherdata.observer.pattern.CurrentConditionDisplay;
+import weatherdata.observer.pattern.ForcastDisplay;
 import weatherdata.observer.pattern.WeatherData;
 
-public class TestCurrentConditionDisplay {
-	
+public class TestForcastDisplay {
+
 	@Test
 	public void shouldGetLatestWeatherDataWhenCallMeasurementsChanged() {
 		//arrange
-		CurrentConditionDisplay display = new CurrentConditionDisplay();
-		WeatherData data = new WeatherData(display, null, null);
+		ForcastDisplay display = new ForcastDisplay();
+		WeatherData data = new WeatherData(null, null, display);
+		
+		//act
 		data.setTemperature(10.0F);
 		data.setHumidity(10.0F);
 		data.setPressure(10.0F);
-		
-		//act
 		data.measurementsChanged();
 		
 		//assert
 		assertEquals(10.0F, display.getTemperature(), 0.0000001);
 		assertEquals(10.0F, display.getHumidity(), 0.0000001);
 		assertEquals(10.0F, display.getPressure(), 0.0000001);
-		
 	}
 	
 	@Test
-	public void shouldSeeCurrentConditionWhenCallDisplay() {
+	public void shouldSeeLatestDataWhenCallMeasurementsChanged() {
 		//arrange
-		CurrentConditionDisplay currentCondition = new CurrentConditionDisplay();
-		WeatherData data = new WeatherData(currentCondition, null, null);		
+		ForcastDisplay display = new ForcastDisplay();
+		WeatherData data = new WeatherData(null, null, display);
 		data.setTemperature(10.0F);
 		data.setHumidity(10.0F);
 		data.setPressure(10.0F);
 		
 		//act
-		data.setTemperature(11.0F);
-		data.setHumidity(11.0F);
-		data.setPressure(11.0F);
+		data.setTemperature(20.0F);
+		data.setHumidity(20.0F);
+		data.setPressure(20.0F);
 		data.measurementsChanged();
-		String contents = currentCondition.display();
+		String contents = display.display();
 		
 		//assert
-		assertEquals("온도 : 11.0, 습도 : 11.0, 기압 : 11.0", contents);
+		assertEquals("온도 : 20.0, 습도 : 20.0, 기압 : 20.0", contents);
+		
 	}
+
 }

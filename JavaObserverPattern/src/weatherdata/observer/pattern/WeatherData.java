@@ -7,10 +7,12 @@ public class WeatherData {
 	private float pressure;
 	private CurrentConditionDisplay currentConditionDisplay;
 	private StatisticsDisplay statisticsDisplay;
+	private ForcastDisplay forcastDisplay;
 	
-	public WeatherData(CurrentConditionDisplay currentConditionDisplay, StatisticsDisplay statisticsDisplay) {
+	public WeatherData(CurrentConditionDisplay currentConditionDisplay, StatisticsDisplay statisticsDisplay, ForcastDisplay forcastDisplay) {
 		this.currentConditionDisplay = currentConditionDisplay;
 		this.statisticsDisplay = statisticsDisplay;
+		this.forcastDisplay = forcastDisplay;
 	}
 	
 	public WeatherData() {
@@ -52,6 +54,10 @@ public class WeatherData {
 		
 		if (statisticsDisplay != null) {
 			statisticsDisplay.update(temp, humidity, pressure);
+		}
+		
+		if (forcastDisplay != null) {
+			forcastDisplay.update(temp, humidity, pressure);
 		}
 	}
 }
