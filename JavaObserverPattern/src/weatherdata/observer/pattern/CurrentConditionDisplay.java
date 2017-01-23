@@ -1,6 +1,6 @@
 package weatherdata.observer.pattern;
 
-public class CurrentConditionDisplay {
+public class CurrentConditionDisplay implements Observer, DisplayElement {
 
 	private float temperature;
 	private float humidity;

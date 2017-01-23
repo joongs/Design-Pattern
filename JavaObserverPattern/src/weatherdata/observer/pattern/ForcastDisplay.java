@@ -1,6 +1,6 @@
 package weatherdata.observer.pattern;
 
-public class ForcastDisplay {
+public class ForcastDisplay implements Observer, DisplayElement{
 
 	private float temperature;
 	private float humidity;

@@ -5,11 +5,11 @@ public class WeatherData {
 	private float temperature;
 	private float humidity;
 	private float pressure;
-	private CurrentConditionDisplay currentConditionDisplay;
+	private Observer currentConditionDisplay;
 	private StatisticsDisplay statisticsDisplay;
 	private ForcastDisplay forcastDisplay;
 	
-	public WeatherData(CurrentConditionDisplay currentConditionDisplay, StatisticsDisplay statisticsDisplay, ForcastDisplay forcastDisplay) {
+	public WeatherData(Observer currentConditionDisplay, StatisticsDisplay statisticsDisplay, ForcastDisplay forcastDisplay) {
 		this.currentConditionDisplay = currentConditionDisplay;
 		this.statisticsDisplay = statisticsDisplay;
 		this.forcastDisplay = forcastDisplay;
