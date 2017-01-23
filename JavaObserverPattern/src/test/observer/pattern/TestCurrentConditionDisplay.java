@@ -12,36 +12,26 @@ public class TestCurrentConditionDisplay {
 	@Test
 	public void shouldGetLatestWeatherDataWhenCallMeasurementsChanged() {
 		//arrange
-		CurrentConditionDisplay display = new CurrentConditionDisplay();
-		WeatherData data = new WeatherData(display, null, null);
-		data.setTemperature(10.0F);
-		data.setHumidity(10.0F);
-		data.setPressure(10.0F);
+		WeatherData data = new WeatherData();
+		CurrentConditionDisplay display = new CurrentConditionDisplay(data);
 		
 		//act
-		data.measurementsChanged();
+		data.setMeasurements(10.0F, 10.0F, 10.0F);
 		
 		//assert
 		assertEquals(10.0F, display.getTemperature(), 0.0000001);
 		assertEquals(10.0F, display.getHumidity(), 0.0000001);
 		assertEquals(10.0F, display.getPressure(), 0.0000001);
-		
 	}
 	
 	@Test
 	public void shouldSeeCurrentConditionWhenCallDisplay() {
 		//arrange
-		CurrentConditionDisplay currentCondition = new CurrentConditionDisplay();
-		WeatherData data = new WeatherData(currentCondition, null, null);		
-		data.setTemperature(10.0F);
-		data.setHumidity(10.0F);
-		data.setPressure(10.0F);
+		WeatherData data = new WeatherData();		
+		CurrentConditionDisplay currentCondition = new CurrentConditionDisplay(data);
 		
 		//act
-		data.setTemperature(11.0F);
-		data.setHumidity(11.0F);
-		data.setPressure(11.0F);
-		data.measurementsChanged();
+		data.setMeasurements(11.0F, 11.0F, 11.0F);
 		String contents = currentCondition.display();
 		
 		//assert

@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import weatherdata.observer.pattern.CurrentConditionDisplay;
+import weatherdata.observer.pattern.ForcastDisplay;
+import weatherdata.observer.pattern.StatisticsDisplay;
 import weatherdata.observer.pattern.WeatherData;
 
 public class TestWeatherData {
@@ -12,38 +15,17 @@ public class TestWeatherData {
 	public void testGetTemperatureWhenCallGetTemperature() {
 		//arrange
 		WeatherData weatherData = new WeatherData();
-		weatherData.setTemperature(72.0F);
+		CurrentConditionDisplay currentDisplay = new CurrentConditionDisplay(weatherData);
+		StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+		ForcastDisplay forcastDisplay = new ForcastDisplay(weatherData);
 		
 		//act
-		float temperature = weatherData.getTemperature();
+		weatherData.setMeasurements(11.0F, 11.0F, 11.0F);
 		
 		//assert
-		assertEquals(72.0F, temperature, 0.0000001);
-	}
-	
-	@Test
-	public void testHumidityWhenCallGetHumidity() {
-		//arrange
-		WeatherData weatherData = new WeatherData();
-		weatherData.setHumidity(60.0F);
+		assertEquals("온도 : 11.0, 습도 : 11.0, 기압 : 11.0", currentDisplay.display());
+		assertEquals("온도 : 11.0, 습도 : 11.0, 기압 : 11.0", statisticsDisplay.display());
+		assertEquals("온도 : 11.0, 습도 : 11.0, 기압 : 11.0", forcastDisplay.display());
 		
-		//act
-		float humidity = weatherData.getHumidity();
-		
-		//assert
-		assertEquals(60.0F, humidity, 0.0000001);	
-	}
-	
-	@Test
-	public void testGetPressureWhenCallGetPressure() {
-		//arrange
-		WeatherData weatherData = new WeatherData();
-		weatherData.setPressure(30.0F);
-		
-		//act
-		float pressure = weatherData.getPressure();
-		
-		//assert
-		assertEquals(30.0F, pressure, 0.0000001);
 	}
 }

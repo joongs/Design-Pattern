@@ -5,17 +5,11 @@ public class ForcastDisplay implements Observer, DisplayElement{
 	private float temperature;
 	private float humidity;
 	private float pressure;
+	private WeatherData weatherData;
 
-	public float getTemperature() {
-		return temperature;
-	}
-
-	public float getHumidity() {
-		return humidity;
-	}
-
-	public float getPressure() {
-		return pressure;
+	public ForcastDisplay(WeatherData weatherData) {
+		this.weatherData = weatherData;
+		this.weatherData.registerObserver(this);
 	}
 
 	public void update(float temperature, float humidity, float pressure) {
@@ -28,4 +22,15 @@ public class ForcastDisplay implements Observer, DisplayElement{
 		return "온도 : " + temperature + ", 습도 : " + humidity + ", 기압 : " + pressure;
 	}
 
+	public float getTemperature() {
+		return temperature;
+	}
+
+	public float getHumidity() {
+		return humidity;
+	}
+
+	public float getPressure() {
+		return pressure;
+	}
 }

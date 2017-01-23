@@ -12,5 +12,6 @@ WeatherData 객체를 사용하여 현재 조건, 기상 통계, 기상 예측
 기상예보 화면에 온도, 습도, 압력을 볼 수 있다.
 옵저버 인터페이스 추가
 디스플레이 인터페이스 추가
-
+WeatherData 코드 리펙토링
+각 CurrentConditionDisplay / StatisticsDisplay / ForcastDisplay Observer Pattern 적용
 //TODO

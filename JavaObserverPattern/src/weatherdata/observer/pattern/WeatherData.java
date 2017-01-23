@@ -1,24 +1,47 @@
 package weatherdata.observer.pattern;
 
-public class WeatherData {
+import java.util.ArrayList;
+
+public class WeatherData implements Subject {
 
 	private float temperature;
 	private float humidity;
 	private float pressure;
-	private Observer currentConditionDisplay;
-	private StatisticsDisplay statisticsDisplay;
-	private ForcastDisplay forcastDisplay;
-	
-	public WeatherData(Observer currentConditionDisplay, StatisticsDisplay statisticsDisplay, ForcastDisplay forcastDisplay) {
-		this.currentConditionDisplay = currentConditionDisplay;
-		this.statisticsDisplay = statisticsDisplay;
-		this.forcastDisplay = forcastDisplay;
+	private ArrayList<Observer> observers;
+
+	public WeatherData() {
+		observers = new ArrayList<Observer>();
 	}
 	
-	public WeatherData() {
-		// TODO Auto-generated constructor stub
+	public void registerObserver(Observer o) {
+		observers.add(o);
+	}
+	
+	public void removeObserver(Observer o) {
+		int index = observers.indexOf(o);
+		if (index >= 0) {
+			observers.remove(index);
+		}
 	}
 
+	public void notifyObservers() {
+		for (int i = 0; i < observers.size(); i++) {
+			Observer observer = (Observer)observers.get(i);
+			observer.update(temperature, humidity, pressure);
+		}
+	}
+
+	public void measurementsChanged() {
+		notifyObservers();
+	}
+
+	public void setMeasurements(float temperature, float humidity, float pressure) {
+		this.temperature = temperature;
+		this.humidity = humidity;
+		this.pressure = pressure;
+		measurementsChanged();
+	}
+	
 	public void setTemperature(float temperature) {
 		this.temperature = temperature;
 	}
@@ -41,23 +64,5 @@ public class WeatherData {
 
 	public float getPressure() {
 		return pressure;
-	}
-
-	public void measurementsChanged() {
-		float temp = this.getTemperature();
-		float humidity = this.getHumidity();
-		float pressure = this.getPressure();
-		
-		if (currentConditionDisplay != null) {
-			currentConditionDisplay.update(temp, humidity, pressure);
-		}
-		
-		if (statisticsDisplay != null) {
-			statisticsDisplay.update(temp, humidity, pressure);
-		}
-		
-		if (forcastDisplay != null) {
-			forcastDisplay.update(temp, humidity, pressure);
-		}
 	}
 }

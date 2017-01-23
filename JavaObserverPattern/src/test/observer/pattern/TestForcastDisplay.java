@@ -12,14 +12,11 @@ public class TestForcastDisplay {
 	@Test
 	public void shouldGetLatestWeatherDataWhenCallMeasurementsChanged() {
 		//arrange
-		ForcastDisplay display = new ForcastDisplay();
-		WeatherData data = new WeatherData(null, null, display);
+		WeatherData data = new WeatherData();
+		ForcastDisplay display = new ForcastDisplay(data);
 		
 		//act
-		data.setTemperature(10.0F);
-		data.setHumidity(10.0F);
-		data.setPressure(10.0F);
-		data.measurementsChanged();
+		data.setMeasurements(10.0F, 10.0F, 10.0F);
 		
 		//assert
 		assertEquals(10.0F, display.getTemperature(), 0.0000001);
@@ -30,17 +27,11 @@ public class TestForcastDisplay {
 	@Test
 	public void shouldSeeLatestDataWhenCallMeasurementsChanged() {
 		//arrange
-		ForcastDisplay display = new ForcastDisplay();
-		WeatherData data = new WeatherData(null, null, display);
-		data.setTemperature(10.0F);
-		data.setHumidity(10.0F);
-		data.setPressure(10.0F);
+		WeatherData data = new WeatherData();
+		ForcastDisplay display = new ForcastDisplay(data);
 		
 		//act
-		data.setTemperature(20.0F);
-		data.setHumidity(20.0F);
-		data.setPressure(20.0F);
-		data.measurementsChanged();
+		data.setMeasurements(20.0F, 20.0F, 20.0F);
 		String contents = display.display();
 		
 		//assert
