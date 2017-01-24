@@ -26,6 +26,5 @@ public class TestWeatherData {
 		assertEquals("온도 : 11.0, 습도 : 11.0, 기압 : 11.0", currentDisplay.display());
 		assertEquals("온도 : 11.0, 습도 : 11.0, 기압 : 11.0", statisticsDisplay.display());
 		assertEquals("온도 : 11.0, 습도 : 11.0, 기압 : 11.0", forcastDisplay.display());
-		
 	}
 }

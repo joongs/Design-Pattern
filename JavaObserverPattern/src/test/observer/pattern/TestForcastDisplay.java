@@ -36,7 +36,5 @@ public class TestForcastDisplay {
 		
 		//assert
 		assertEquals("온도 : 20.0, 습도 : 20.0, 기압 : 20.0", contents);
-		
 	}
-
 }
