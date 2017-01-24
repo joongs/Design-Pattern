@@ -1,0 +1,82 @@
+@startuml
+class WeatherData {
+	-float temperature
+	-float humidity
+	-float pressure
+	-ArrayList<Observer> observers
+	+WeatherData()
+	+void registerObserver(Observer o)
+	+void removeObserver(Observer o)
+	+void notifyObservers()
+	+void measurementsChanged()
+	+void setMeasurements(float temperature, float humidity, float pressure)
+}
+class Subject {
+}
+Subject <|.. WeatherData
+class CurrentConditionDisplay {
+	-float temperature
+	-float humidity
+	-float pressure
+	-Subject weatherData
+	+CurrentConditionDisplay(Subject weatherData)
+	+String display()
+	+void update(float temp, float humidity, float pressure)
+	+float getTemperature()
+	+float getHumidity()
+	+float getPressure()
+}
+class Observer {
+}
+Observer <|.. CurrentConditionDisplay
+class DisplayElement {
+}
+DisplayElement <|.. CurrentConditionDisplay
+class StatisticsDisplay {
+	-float temperature
+	-float humidity
+	-float pressure
+	-WeatherData weatherData
+	+StatisticsDisplay(WeatherData weatherData)
+	+String display()
+	+void update(float temp, float humidity, float pressure)
+	+float getTemperature()
+	+float getHumidity()
+	+float getPressure()
+}
+class Observer {
+}
+Observer <|.. StatisticsDisplay
+class DisplayElement {
+}
+DisplayElement <|.. StatisticsDisplay
+class ForcastDisplay {
+	-float temperature
+	-float humidity
+	-float pressure
+	-WeatherData weatherData
+	+ForcastDisplay(WeatherData weatherData)
+	+void update(float temperature, float humidity, float pressure)
+	+String display()
+	+float getTemperature()
+	+float getHumidity()
+	+float getPressure()
+}
+class Observer {
+}
+Observer <|.. ForcastDisplay
+class DisplayElement {
+}
+DisplayElement <|.. ForcastDisplay
+interface DisplayElement {
+	String display()
+}
+interface Observer {
+	void update(float temp, float humidity, float pressure)
+}
+interface Subject {
+	void registerObserver(Observer o)
+	void removeObserver(Observer o)
+	void notifyObservers()
+}
+@enduml
